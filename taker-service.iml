@@ -108,6 +108,8 @@
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
     <orderEntry type="module" module-name="taker-intf" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
+    <orderEntry type="module" module-name="takercore" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.10.3" level="project" />
     <orderEntry type="library" name="Maven: com.aquatic.schedule:schedule-service:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.aquatic.schedule:schedule-dao:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:1.0.0" level="project" />

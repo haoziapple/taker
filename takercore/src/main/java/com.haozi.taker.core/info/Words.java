@@ -7,6 +7,8 @@ package com.haozi.taker.core.info;
 public class Words {
     private String text;
 
+    private String mean;
+
     private String type;
 
     private String pronounce;
@@ -45,10 +47,19 @@ public class Words {
         this.demoSentence = demoSentence;
     }
 
+    public String getMean() {
+        return mean;
+    }
+
+    public void setMean(String mean) {
+        this.mean = mean;
+    }
+
     @Override
     public String toString() {
         return "Words{" +
                 "text='" + text + '\'' +
+                ", mean='" + mean + '\'' +
                 ", type='" + type + '\'' +
                 ", pronounce='" + pronounce + '\'' +
                 ", demoSentence='" + demoSentence + '\'' +

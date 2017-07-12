@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haozi.taker.service.dao.WordsMapper">
+
+    <!--插入单词-->
+    <insert id="insert" parameterType="java.lang.String">
+        INSERT INTO public_module.wanghao_demo_words
+        (word)
+        VALUES
+        (#{text})
+    </insert>
+
+    <!--获取未处理的单词-->
+    <select id="getUnparsed" resultType="java.lang.String">
+        SELECT
+        word as text
+        FROM public_module.wanghao_demo_words
+        where parsed = '0'
+        LIMIT 10
+    </select>
+
+    <!--更新处理信息-->
+    <update id="update" parameterType="com.haozi.taker.core.info.Words">
+        UPDATE public_module.wanghao_demo_words
+        SET
+        mean = #{mean},
+        word_type = #{type},
+        pronounce = #{pronounce},
+        demo_senten = #{demoSentence},
+        parsed = '1'
+        WHERE word = #{text}
+    </update>
+</mapper>

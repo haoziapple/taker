@@ -1,5 +1,6 @@
 package com.haozi.taker.core.util;
 
+import com.google.common.base.MoreObjects;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -21,14 +22,13 @@ public class JsoupUtil {
      * @return
      */
     public static String getRawText(String html, String cssQuery) {
+        if (html == null || html.equals("")) {
+            return "";
+        }
         Document doc = Jsoup.parse(html);
         Elements text = doc.select(cssQuery);
-        StringBuilder sb = new StringBuilder("");
-        for(Element el:text)
-        {
-            sb.append(el.html()).append(" ");
-        }
-        return sb.toString();
+
+        return text.html();
     }
 
 

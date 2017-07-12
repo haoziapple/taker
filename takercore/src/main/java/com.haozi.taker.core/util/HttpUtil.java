@@ -16,14 +16,14 @@ import java.net.URL;
 public class HttpUtil {
     private static final String sep = System.getProperty("line.separator");
     public static String readURL(String URLPath) {
-        long start = System.currentTimeMillis();
+//        long start = System.currentTimeMillis();
         try {
             URL url = new URL(URLPath);
             HttpURLConnection connect = (HttpURLConnection) url.openConnection();
 
             int responseCode = connect.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
-                System.out.println("success read httpURL");
+//                System.out.println("success read httpURL");
                 InputStream in = connect.getInputStream();
                 InputStreamReader isr = new InputStreamReader(in);
                 BufferedReader bufr = new BufferedReader(isr);
@@ -34,9 +34,9 @@ public class HttpUtil {
                 while ((read = bufr.readLine()) != null) {
                     sb.append(read).append(sep);
                 }
-                long end = System.currentTimeMillis();
-                long span = end - start;
-                System.out.println("读取url用时:" + span + "ms");
+//                long end = System.currentTimeMillis();
+//                long span = end - start;
+//                System.out.println("读取url用时:" + span + "ms");
                 return sb.toString();
             } else {
                 System.out.println("fail read httpURL");
